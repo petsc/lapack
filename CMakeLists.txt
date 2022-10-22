@@ -132,10 +132,13 @@ elseif(_qrecurFlag)
   endif()
 endif()
 
-if(UNIX)
+if(UNIX AND NOT CYGWIN)
   if(CMAKE_Fortran_COMPILER_ID STREQUAL Intel)
     set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -fp-model strict")
   endif()
+#endif
+
+if(UNIX)
   if(CMAKE_Fortran_COMPILER_ID STREQUAL XL)
     set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -qnosave -qstrict")
   endif()
