@@ -1,4 +1,5 @@
 # Create a header file lapacke_mangling.h for the routines called in my C programs
+enable_language(C)
 include(FortranCInterface)
 ## Ensure that the fortran compiler and c compiler specified are compatible
 FortranCInterface_VERIFY()
